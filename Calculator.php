@@ -11,8 +11,9 @@ class Calculator
         }
 
         //если не прошло первое условие то пробуем проверить содержимое $data на конкатенацию текста
-        elseif (isset($data) && preg_match('/^([a-zA-Zа-яёА-ЯЁ0-9]+)\s*(\+){1}\s*([a-zA-Zа-яёА-ЯЁ0-9]+)$/su', trim($data),$num)){
-            return $num[1].$num[3];
+        elseif (isset($data) && preg_match('/^([a-zA-Zа-яёА-ЯЁ0-9]+)(\s*(\+){1}\s*([a-zA-Zа-яёА-ЯЁ0-9]+))+$/su', trim($data),$num)){
+            //return $num[1].$num[3];
+            return preg_replace(array('/\+/', '/\s/'), '', $data);
         }
 
         // в противном случае вообщим что и как нужно вводить

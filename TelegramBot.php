@@ -5,7 +5,7 @@ use GuzzleHttp\Client;
 
 class TelegramBot
 {
-    protected $token = '586560531:AAHiH2t4d9vctmDjVzoXnwCTMLRD7uHW1cw';
+    protected $token = 'token';
     protected $updateId;
 
     //конектимся к апи телеграма и передаём параметры
